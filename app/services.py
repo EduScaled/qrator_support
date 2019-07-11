@@ -4,7 +4,6 @@ from app.utils import get_qrator_url, get_request_id
 
 
 def add_ip_address(ip_address):
-    ip_address = "109.252.79.79"
     headers = {
         "X-Qrator-Auth": QRATOR_AUTH_TOKEN
     }
