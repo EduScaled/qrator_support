@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h3>Available options:</h3>
+    <ul>
+        <li>
+            <a href="/ip/check/whitelist/">Check IP is in a whitelist</a>
+        </li>
+        <li>
+            <a href="/ip/check/blacklist/">Check IP is in a blacklist</a>
+        </li>
+        <br/> 
+        <li>
+            <a href="/ip/add/permanently/">Add IP to a whitelist permanently</a>
+        </li>
+        <li>
+            <a href="/ip/add/hourly/">Add IP to a whitelist for one hour</a>
+        </li>
+        <br/>
+        <li>
+            <a href="/ip/remove/whitelist/">Remove IP from a whitelist</a>
+        </li>
+        <li>
+            <a href="/ip/remove/blacklist/">Remove IP from a blacklist</a>
+        </li>
+    </ul>
+{% endblock %}

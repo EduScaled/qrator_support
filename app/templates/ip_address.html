@@ -1,11 +1,11 @@
-{% extends 'bootstrap/base.html' %}
+{% extends 'base/base.html' %}
 
 {% block content %}
     <div class="container">
         <form method="POST">
-            New IP address: 
+            IP address: 
             <input name="ip_address" required pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$">
-            <button type="submit">Add</button>
+            <button type="submit">Action!</button>
         </form>
     </div>
 {% endblock %}
