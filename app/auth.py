@@ -1,10 +1,15 @@
 from functools import wraps
 from flask import request, Response
-from settings import BASIC_AUTH_LOGIN, BASIC_AUTH_PASSWORD
+from settings import BASIC_AUTH
 
 
 def check_auth(username, password):
-    return username == BASIC_AUTH_LOGIN and password == BASIC_AUTH_PASSWORD
+    for account in BASIC_AUTH.split(";"):
+        credentials = account.split(":")
+        if username == credentials[0] and password == credentials[1]:
+            return True
+
+    return False
 
 
 def authenticate():

@@ -9,7 +9,7 @@ def common(request, func):
     if request.method == 'POST':
         ip_address = request.form.get("ip_address", None)
         if ip_address:
-            session["qrator"] = func(ip_address)
+            session["qrator"] = func(ip_address, request.authorization.get('username'))
             return redirect("/ip/status/")
 
     return render_template('ip_address.html')

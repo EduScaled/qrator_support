@@ -1,8 +1,9 @@
 import requests
-from app.helpers.qrator import get_qrator_url, get_request_id, get_qrator_headers
+from app.helpers.logger import log
+from app.helpers.qrator import get_qrator_url, get_request_id, get_qrator_headers, get_status
 
 
-def remove_blacklist(ip_address):
+def remove_blacklist(ip_address, username):
     data = {
         "id": get_request_id(),
         "method": "blacklist_remove",
@@ -18,10 +19,12 @@ def remove_blacklist(ip_address):
         "json": r.json()
     }
 
+    log(get_status(result), "REMOVE_IP_FROM_BLACKLIST", str(ip_address), username)
+
     return result
 
 
-def check(ip_address):
+def check(ip_address, username):
     data = {
         "id": get_request_id(),
         "method": "blacklist_get",
@@ -44,5 +47,7 @@ def check(ip_address):
         "ip_address": ip_address,
         "json": json
     }
+
+    log(get_status(result), "CHECK_IP_IN_BLACKLIST", str(ip_address), username)
 
     return result

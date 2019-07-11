@@ -12,3 +12,7 @@ def get_qrator_url():
 
 def get_qrator_headers():
     return { "X-Qrator-Auth": QRATOR_AUTH_TOKEN }
+
+
+def get_status(result):
+    return "FAIL" if result.get("json").get("error", None) else "SUCCESS" 
