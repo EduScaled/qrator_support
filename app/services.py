@@ -1,23 +1,26 @@
-import requests
-from settings import QRATOR_AUTH_TOKEN
-from app.utils import get_qrator_url, get_request_id
+from app.core.whitelist.actions import permanently, hourly, remove_whitelist, check_whitelist
+from app.core.blacklist.actions import check as check_blacklist, remove_blacklist
 
 
-def add_ip_address(ip_address):
-    headers = {
-        "X-Qrator-Auth": QRATOR_AUTH_TOKEN
-    }
-    data = {
-        "id": get_request_id(),
-        "method": "whitelist_append",
-        "params": [ str(ip_address) ]
-    }    
+def add_ip_address_permanently(ip_address, username):
+    return permanently(ip_address, username)
 
-    r = requests.post(url=get_qrator_url(), headers=headers, json=data)
 
-    result = {
-        "status": r.status_code,
-        "json": r.json()
-    }
+def add_ip_address_hourly(ip_address, username):
+    return hourly(ip_address, username)
 
-    return result
+
+def remove_ip_address_whitelist(ip_address, username):
+    return remove_whitelist(ip_address, username)
+
+
+def remove_ip_address_blacklist(ip_address, username):
+    return remove_blacklist(ip_address, username)
+
+
+def check_ip_whitelist(ip_address, username):
+    return check_whitelist(ip_address, username)
+
+
+def check_ip_blacklist(ip_address, username):
+    return check_blacklist(ip_address, username)

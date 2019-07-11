@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+{% block container %}
+    <h3>Available options:</h3>
+    <br>
+    <div class="list-group" style="width: 50%;">
+        <a href="/ip/check/whitelist/" class="list-group-item list-group-item-action">
+            Check IP is in whitelist
+        </a>
+        <a href="/ip/check/blacklist/" class="list-group-item list-group-item-action">
+            Check IP is in blacklist
+        </a>
+        <a href="/ip/add/permanently/" class="list-group-item list-group-item-action">
+            Add IP to whitelist permanently
+        </a>
+        <a href="/ip/add/hourly/" class="list-group-item list-group-item-action">
+            Add IP to whitelist for one hour
+        </a>  
+        <a href="/ip/remove/whitelist/" class="list-group-item list-group-item-action">
+            Remove IP from whitelist
+        </a>    
+        <a href="/ip/remove/blacklist/" class="list-group-item list-group-item-action">
+            Remove IP from blacklist
+        </a>                
+    </div>
+{% endblock %}
