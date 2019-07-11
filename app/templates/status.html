@@ -1,0 +1,17 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block content %}
+    <div class="container">
+        {% if result.status == 200 %}
+            <h3>IP successfully added to QRATOR!</h3>
+            <div>HTTP status code: {{ result.status }}</div> 
+            <div>{{ result.json }}</div>
+        {% else %}
+            <h3>Something went wrong!</h3>
+            <div>HTTP status code: {{ result.status }}</div> 
+            <div>{{ result.json }}</div>
+        {% endif %}
+        <br/>
+        <a href="/ip/add/">Add one more IP</a>
+    </div>
+{% endblock %}
