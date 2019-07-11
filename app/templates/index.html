@@ -1,27 +1,26 @@
 {% extends 'base/base.html' %}
 
-{% block content %}
+{% block container %}
     <h3>Available options:</h3>
-    <ul>
-        <li>
-            <a href="/ip/check/whitelist/">Check IP is in a whitelist</a>
-        </li>
-        <li>
-            <a href="/ip/check/blacklist/">Check IP is in a blacklist</a>
-        </li>
-        <br/> 
-        <li>
-            <a href="/ip/add/permanently/">Add IP to a whitelist permanently</a>
-        </li>
-        <li>
-            <a href="/ip/add/hourly/">Add IP to a whitelist for one hour</a>
-        </li>
-        <br/>
-        <li>
-            <a href="/ip/remove/whitelist/">Remove IP from a whitelist</a>
-        </li>
-        <li>
-            <a href="/ip/remove/blacklist/">Remove IP from a blacklist</a>
-        </li>
-    </ul>
+    <br>
+    <div class="list-group" style="width: 50%;">
+        <a href="/ip/check/whitelist/" class="list-group-item list-group-item-action">
+            Check IP is in whitelist
+        </a>
+        <a href="/ip/check/blacklist/" class="list-group-item list-group-item-action">
+            Check IP is in blacklist
+        </a>
+        <a href="/ip/add/permanently/" class="list-group-item list-group-item-action">
+            Add IP to whitelist permanently
+        </a>
+        <a href="/ip/add/hourly/" class="list-group-item list-group-item-action">
+            Add IP to whitelist for one hour
+        </a>  
+        <a href="/ip/remove/whitelist/" class="list-group-item list-group-item-action">
+            Remove IP from whitelist
+        </a>    
+        <a href="/ip/remove/blacklist/" class="list-group-item list-group-item-action">
+            Remove IP from blacklist
+        </a>                
+    </div>
 {% endblock %}

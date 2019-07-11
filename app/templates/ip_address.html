@@ -1,11 +1,17 @@
 {% extends 'base/base.html' %}
 
-{% block content %}
-    <div class="container">
-        <form method="POST">
-            IP address: 
-            <input name="ip_address" required pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$">
-            <button type="submit">Action!</button>
-        </form>
-    </div>
+{% block container %}
+    <form method="POST">
+        <div class="form-group">
+                <label for="ip_address">IP address: </label>
+                <input 
+                    required
+                    id="ip_address"
+                    name="ip_address"
+                    class="form-control"  
+                    pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$"
+                >
+        </div>
+        <button type="submit" class="btn btn-primary">Do action</button>
+    </form>
 {% endblock %}
