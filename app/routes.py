@@ -5,17 +5,15 @@ from app.services import add_ip_address
 
 
 @app.route('/ip/add/', methods=['GET', 'POST'])
+@requires_auth
 def ip_address():
     if request.method == 'POST':
         ip_address = request.form.get("ip_address", None)
         if ip_address:
-            result = add_ip_address(ip_address)
-            session["qrator"] = result
+            session["qrator"] = add_ip_address(ip_address)
             return redirect("/ip/status/")
 
-    
     return render_template('add_ip_address.html')
-
 
 
 @app.route('/ip/status/')

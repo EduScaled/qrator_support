@@ -16,8 +16,6 @@ def add_ip_address(ip_address):
 
     r = requests.post(url=get_qrator_url(), headers=headers, json=data)
 
-    print(r.json())
-
     result = {
         "status": r.status_code,
         "json": r.json()
