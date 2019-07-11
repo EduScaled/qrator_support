@@ -2,3 +2,4 @@ todo
 run.sh
 .vscode
 *.sqlite
+app.env
